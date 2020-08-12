@@ -1,0 +1,33 @@
+.statsBox {
+    flex: 1;
+  }
+  
+  .statsBox:not(:last-child) {
+    margin-right: 10px;
+  }
+  
+  .statsBox--selected {
+    border-top: 10px solid greenyellow;
+  }
+  
+  .statsBox--red {
+    border-color: red;
+  }
+  
+  .statsBox-cases--green {
+    color: lightgreen !important;
+  }
+  
+  .statsBox-cases {
+    color: #cc1034;
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .statsBox-total {
+    color: #6c757d;
+    font-weight: 700 !important;
+    font-size: 0.8rem !important;
+    margin-top: 15px !important;
+  }

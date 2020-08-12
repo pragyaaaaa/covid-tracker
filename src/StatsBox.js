@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './StatsBox.css';
 import {
     Card,
     CardContent,

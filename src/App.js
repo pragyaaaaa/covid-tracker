@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import StatsBox from './StatsBox';
+import LineGraph from './LineGraph';
+import {sortDataByCases} from './util';
 import {
   MenuItem,
   FormControl,
@@ -39,7 +41,8 @@ function App() {
               value: country.countryInfo.iso2
             }
           ));
-          setTableData(data);
+          const sortedData=sortDataByCases(data);
+          setTableData(sortedData);
           setCountries(countries);
         })
     }
@@ -121,8 +124,10 @@ function App() {
           {/* Table */}
           <Table countries={tableData}></Table>
           
-          {/* Graph */}
           <h3>Worldwide Live Cases</h3>
+          {/* Graph */}
+          <LineGraph /* casesType={casesType}> */></LineGraph>
+         
         </CardContent>
       </Card>
     </div>

@@ -9,6 +9,7 @@ import {
   CardContent,
 } from "@material-ui/core";
 import Map from './Map';
+import Table from './Table';
 //https://disease.sh/v3​/covid-19​/countries
 //useeffect: rumns a piece of code based on a given condition
 
@@ -17,6 +18,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo]=useState({});
+  const [tableData, setTableData]=useState([]);
 
   useEffect(()=>{
     fetch("https://disease.sh/v3/covid-19/all")
@@ -37,6 +39,7 @@ function App() {
               value: country.countryInfo.iso2
             }
           ));
+          setTableData(data);
           setCountries(countries);
         })
     }
@@ -114,8 +117,10 @@ function App() {
       </div>
       <Card className="app-right">
         <CardContent>
+        <h3>Live Cases by Country</h3>
           {/* Table */}
-          <h3>Live Cases by Country</h3>
+          <Table countries={tableData}></Table>
+          
           {/* Graph */}
           <h3>Worldwide Live Cases</h3>
         </CardContent>

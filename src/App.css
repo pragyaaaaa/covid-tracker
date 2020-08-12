@@ -2,9 +2,33 @@
   margin: 0;
 }
 
+body{
+  background-color: #d6e2ee;
+}
+
+.app{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
 .app-header{
   display: flex; /* displaying side-by-side, by row */
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.app-stats{
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-left{
+  flex: 0.9;
+}
+/* when we resize window */
+@media (max-width: 990px){
+  .app{
+    flex-direction: column;
+  }
 }
